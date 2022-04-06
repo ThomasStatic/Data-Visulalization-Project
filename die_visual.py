@@ -9,17 +9,16 @@ die_2 = Die()
 
 
 # Make some results and store the results in a list
-results = []
-for rull_num in range(1000):
-	result = die_1.roll() + die_2.roll()
-	results.append(result)
+roll_num = range(1000)
+results = [die_1.roll() + die_2.roll() for x in roll_num]
 
 # Analyze the results
-frequencies = []
 max_result = die_1.num_sides + die_2.num_sides
-for value in range(2, max_result + 1):
-	frequency = results.count(value)
-	frequencies.append(frequency)
+value_range = range(2, max_result + 1)
+frequencies = [results.count(value) for value in value_range]
+# for value in range(2, max_result + 1):
+# 	frequency = results.count(value)
+# 	frequencies.append(frequency)
 
 # Visualize the results
 x_values = list(range(2, max_result+1))
